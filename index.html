@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Prediction API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .subtitle {
+            color: #555;
+        }
+        .api-section {
+            background: #ffffff;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        ul {
+            margin-left: 20px;
+        }
+        code {
+            background: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        .endpoint {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌸 Iris Flower Classification API</h1>
+    <p class="subtitle">
+        Machine Learning REST API for predicting Iris flower species
+    </p>
+
+    <div class="api-section">
+        <h2>📊 Dataset Information</h2>
+
+        <p><strong>Features:</strong></p>
+        <ul>
+            {% for feature in feature_names %}
+            <li>{{ feature }}</li>
+            {% endfor %}
+        </ul>
+
+        <p><strong>Target Classes:</strong></p>
+        <ul>
+            {% for target in target_names %}
+            <li>{{ target }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="api-section">
+        <h2>🔗 API Endpoints</h2>
+
+        <div class="endpoint">
+            <p><strong>GET</strong> <code>/api/info</code></p>
+            <p>Returns model information, features, and target classes.</p>
+        </div>
+
+        <div class="endpoint">
+            <p><strong>POST</strong> <code>/api/predict</code></p>
+            <p>Returns prediction based on input features.</p>
+            <p><strong>Sample JSON Input:</strong></p>
+            <pre>
+{
+  "features": [5.1, 3.5, 1.4, 0.2]
+}
+            </pre>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
